@@ -212,6 +212,7 @@
       <workItem from="1582516092518" duration="4793000" />
       <workItem from="1582806741224" duration="18695000" />
       <workItem from="1582867605675" duration="1769000" />
+      <workItem from="1582880447098" duration="2858000" />
     </task>
     <servers />
   </component>
@@ -239,10 +240,10 @@
       <screen x="0" y="0" width="1366" height="738" />
     </state>
     <state x="184" y="12" key="SettingsEditor/0.0.1366.738@0.0.1366.738" timestamp="1578562607293" />
-    <state x="379" y="194" key="com.intellij.ide.util.TipDialog" timestamp="1582867701097">
+    <state x="379" y="194" key="com.intellij.ide.util.TipDialog" timestamp="1582880563457">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state x="379" y="194" key="com.intellij.ide.util.TipDialog/0.0.1366.738@0.0.1366.738" timestamp="1582867701097" />
+    <state x="379" y="194" key="com.intellij.ide.util.TipDialog/0.0.1366.738@0.0.1366.738" timestamp="1582880563457" />
     <state x="329" y="0" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1580207753468">
       <screen x="0" y="0" width="1366" height="738" />
     </state>

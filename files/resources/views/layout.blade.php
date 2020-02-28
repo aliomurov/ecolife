@@ -282,12 +282,12 @@
                             <ul>
                                 @foreach($brandss as $brandcat)
                                     <li aria-haspopup="true">
-                                        <a href="#">{{$brandcat->name}}</a>
+                                        <a href="{{route('pages.brandcategory', $brandcat->slug)}}">{{$brandcat->name}}</a>
                                         <div class="grid-container3 grid-3-brand">
                                         <ul>
                                             @foreach($brandcat->brand as $br)
                                             <li aria-haspopup="true">
-                                                <a href="{{route('pages.brand', [$br->slug])}}">{{$br->name}}</a>
+                                                <a href="{{route('pages.brand', [$br->brandcategory->slug, $br->slug])}}">{{$br->name}}</a>
                                             </li>
                                             @endforeach
                                         </ul>
@@ -309,17 +309,7 @@
                     </div>
                 @endif
             </div>
-            @yield('content'){{--
-            <div class="mobile-watsapp-phone">
-                <div class="row watsapp">
-                    <a href="tel:+996222750075" class="btn btn-primary">
-                        <i class="fas fa-phone-alt"></i> Позвонить
-                    </a>
-                    <a href="https://api.whatsapp.com/send?phone=996222750075" class="btn btn-secondary">
-                        <i class="fab fa-whatsapp"></i> Watsapp
-                    </a>
-                </div>
-            </div>--}}
+            @yield('content')
         </div>
 
         <div class="footer-con container-fluid">

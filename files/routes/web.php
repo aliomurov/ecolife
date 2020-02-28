@@ -162,7 +162,8 @@ Route::middleware('auth')->group(function(){
 
 Route::get('/', 'PagesController@index')->name('pages.index');
 Route::get('/kategoriya-brendov', 'PagesController@brands')->name('pages.brands');
-Route::get('/brands/{brand}', 'PagesController@brand')->name('pages.brand');
+Route::get('/kategoriya-brendov/{brandcategory}', 'PagesController@brandcategory')->name('pages.brandcategory');
+Route::get('/kategoriya-brendov/{brandcategory}/{brand}', 'PagesController@brand')->name('pages.brand');
 
 Route::get('/news', 'PagesController@news')->name('pages.news');
 

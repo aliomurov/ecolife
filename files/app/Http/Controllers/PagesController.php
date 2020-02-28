@@ -213,7 +213,25 @@ class PagesController extends Controller
         return view('pages.brands', compact('brandscategory','brands', 'categories', 'brandss', 'wishCount'));
     }
 
-    public function brand(Brand $brand)
+    public function brandcategory(Brandcategory $brandcategory, Brand $brand)
+    {
+        $categories = $this->categories;
+        $brandss = $this->brandss;
+        $paginate = $this->paginate;
+        $brandscategory = Brandcategory::get();
+
+        if(Auth::check())
+        {
+            $wishCount = Wish::where('user_id', Auth::user()->id)->count();
+        } else {
+            $wishCount = Wish::where('ip_address', request()->getClientIp())->count();
+        }
+
+        $brands = Brand::where('brandcategory_id', $brandcategory->id)->latest()->paginate($paginate);
+        return view('pages.brandscategory', compact('brands', 'brandcategory', 'brand', 'brandss', 'categories', 'wishCount', 'brandscategory'));
+    }
+
+    public function brand(Brandcategory $brandcategory, Brand $brand)
     {
         $categories = $this->categories;
         $brandss = $this->brandss;
@@ -227,8 +245,7 @@ class PagesController extends Controller
         }
 
         $brand_products = Product::where('brand_id', $brand->id)->latest()->paginate($paginate);
-
-        return view('pages.brand', compact('brand', 'categories', 'brand_products', 'brandss', 'wishCount'));
+        return view('pages.brand', compact('brand', 'categories', 'brandcategory', 'brand_products', 'brandss', 'wishCount'));
     }
 
     public function search(Request $request)

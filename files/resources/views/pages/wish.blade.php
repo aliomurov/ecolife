@@ -133,7 +133,7 @@
                                                                             <tr>
                                                                                 <th scope="row">Бренд:</th>
                                                                                 <td>
-                                                                                    <a href="{{route('pages.brand', $p->product->brand->slug)}}">
+                                                                                    <a href="{{route('pages.brand', [$p->product->brand->brandcategory->slug, $p->product->brand->slug])}}">
                                                                                         {{$p->product->brand->name}}
                                                                                     </a>
                                                                                 </td>

@@ -165,7 +165,7 @@
                                                                             <tr>
                                                                                 <th scope="row">Бренд:</th>
                                                                                 <td>
-                                                                                    <a href="{{route('pages.brand', $catproduct->brand->slug)}}">
+                                                                                    <a href="{{route('pages.brand', [$catproduct->brand->brandcategory->slug, $catproduct->brand->slug])}}">
                                                                                         {{$catproduct->brand->name}}
                                                                                     </a>
                                                                                 </td>
