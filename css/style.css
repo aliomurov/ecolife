@@ -951,6 +951,23 @@ ul{
     display: none;
 }
 
+#social-links {
+    transition: all 1s;
+}
+
+.modal-product-share .col .share {
+    color: #5D836A;
+    font-size: 30px;  
+    }
+
+.modal-product-share .col .share:hover {
+    color: rgb(159, 185, 168); 
+    }
+
+    .modal-product-share {
+       padding-left: 0 !important;  
+        }
+
 
 @media(max-width:960px) {
     .menu-cat{

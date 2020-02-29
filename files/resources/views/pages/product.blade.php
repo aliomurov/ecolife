@@ -24,7 +24,7 @@
         <div class="row">
             <div class="col">
                 <p class="lead text-sm-left poduct-sinle-lead">
-                    <span>Производитель: </span> <a href="{{route('pages.brand', $product->brand->slug)}}">{{$product->brand->name}}</a>
+                    <span>Производитель: </span> <a href="{{route('pages.brand', [$product->brand->brandcategory->slug, $product->brand->slug])}}">{{$product->brand->name}}</a>
                 </p>
             </div>
             <div class="col">
@@ -63,8 +63,42 @@
                 </div>
                 <div>
                     <p class="lead text-sm-right">
-                        <span class="share"><a href=""><i class="fas fa-share-alt"></i> Поделиться</a></span>
+                        <span class="share"><a href="" data-toggle="modal" data-target="#share-1"><i class="fas fa-share-alt"></i> Поделиться</a></span>
                     </p>
+
+
+<!-- Modal -->
+<div class="modal fade" id="share-1" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLongTitle">Поделиться</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+
+      <div class="modal-body modal-product-share" id="social-links">
+	<ul class="row align-content-center">
+		<a class="col" href="https://www.facebook.com/sharer/sharer.php?u={{route('pages.product', [$product->category->slug, $product->subcategory->slug, $product->categoryproduct->slug, $product->slug])}}" id=""><i class="fab fa-facebook share"></i></a>
+		<a class="col" href="https://twitter.com/intent/tweet?text=Оцените качество продукта&amp;url={{route('pages.product', [$product->category->slug, $product->subcategory->slug, $product->categoryproduct->slug, $product->slug])}}" id=""><i class="fab fa-twitter share"></i></a>
+		<a class="col" href="https://telegram.me/share/url?url={{route('pages.product', [$product->category->slug, $product->subcategory->slug, $product->categoryproduct->slug, $product->slug])}}&amp;title=Отличный продукт на сайте&amp;summary=dОцените качество продукта" id=""><i class="fab fa-telegram-plane share"></i></a>
+		<a class="col" href="https://wa.me/?text={{route('pages.product', [$product->category->slug, $product->subcategory->slug, $product->categoryproduct->slug, $product->slug])}}" id=""><i class="fab fa-whatsapp share"></i></a>    
+	</ul>
+</div>
+
+
+
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Закрыть</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
                 </div>
             </div>
         </div>
